@@ -2,3 +2,15 @@ header {
     display: flex;
     justify-content: center;
 }
+
+.centerthecontainer {
+    display: flex;
+    justify-content: center;
+}
+
+#container{
+    display: flex;
+    border: solid 2px black; 
+    width: 650px;
+    height: 650px;
+}
