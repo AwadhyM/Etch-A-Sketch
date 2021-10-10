@@ -10,7 +10,25 @@ header {
 
 #container{
     display: flex;
-    border: solid 2px black; 
+    border: solid 2px black;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content: flex-start;
     width: 650px;
     height: 650px;
+}
+
+.divrows {
+    display: flex;
+    flex: 1 1 auto; 
+    flex-wrap: wrap; 
+    flex-direction: row;
+    border: solid 2px black;
+}
+
+.divcols {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px black;
+    flex: 1 1 auto; 
 }
