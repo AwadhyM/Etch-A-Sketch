@@ -16,9 +16,33 @@ function createGrid (rows) {
 
 createGrid(16);
 
+let rows = document.getElementsByClassName("divrows");
+let cols = document.getElementsByClassName("divcols");
+
+function removeExistingGrid () {
+    while(rows.length > 0){
+            rows[0].parentNode.removeChild(rows[0]);
+        }
+    while (cols.length > 0) {
+        cols[0].parentNode.removeChild(cols[0]);
+    }
+    }
+
+
+function customGrid () {
+    let userChoice = prompt("Select a number between 1-100 in order to make a grid", "");
+    if (userChoice > 0 && userChoice <=100) {
+        removeExistingGrid();
+        createGrid(userChoice);
+    }
+}
+
+let customButton = document.getElementById('customMode');
+
+customButton.addEventListener("click", customGrid);
 
 container.addEventListener("mouseover", function(e) {
-    if (e.target && e.target.nodeName == "DIV" && e.target.classList == "divcols")  {
+    if (e.target.classList == "divcols")  {
         e.target.style.backgroundColor = "aqua";
     }
 });
