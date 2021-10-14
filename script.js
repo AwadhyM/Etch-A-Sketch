@@ -46,19 +46,24 @@ let orangeButton = document.getElementById('orangebutton');
 let greenButton = document.getElementById('greenbutton');
 let greyButton = document.getElementById('greybutton');
 let rainbowButton = document.getElementById('rainbowbutton');
+let eraserButton = document.getElementById('eraserbutton');
 
 aquaButton.addEventListener("click", aquaColour);
 orangeButton.addEventListener("click", orangeColour);
 greenButton.addEventListener("click", greenColour);
 greyButton.addEventListener("click", greyColour);
 rainbowButton.addEventListener("click", rainbowColour);
-eraserButton.addEventListener("click",)
+eraserButton.addEventListener("click", eraser);
 
 // functions for event listeners 
 
-function erasor () {
-    
-}
+function eraser () {
+    container.addEventListener("mouseover", function(e) {
+        if (e.target.classList == "divcols")  {
+            e.target.style.backgroundColor = "white";
+        }
+    });
+    }
 
 function aquaColour () {
 container.addEventListener("mouseover", function(e) {
