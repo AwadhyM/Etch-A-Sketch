@@ -1,4 +1,6 @@
 const container = document.getElementById('container');
+let rows = document.getElementsByClassName("divrows");
+let cols = document.getElementsByClassName("divcols");
 
 function createGrid (rows) {
     for (i = 1; i <= rows; i++) {
@@ -16,9 +18,6 @@ function createGrid (rows) {
 
 createGrid(16);
 
-let rows = document.getElementsByClassName("divrows");
-let cols = document.getElementsByClassName("divcols");
-
 function removeExistingGrid () {
     while(rows.length > 0){
             rows[0].parentNode.removeChild(rows[0]);
@@ -26,8 +25,10 @@ function removeExistingGrid () {
     while (cols.length > 0) {
         cols[0].parentNode.removeChild(cols[0]);
     }
-    }
+}
 
+let customButton = document.getElementById('customMode');
+customButton.addEventListener("click", customGrid);
 
 function customGrid () {
     let userChoice = prompt("Select a number between 1-100 in order to make a grid", "");
@@ -37,16 +38,14 @@ function customGrid () {
     }
 }
 
-let customButton = document.getElementById('customMode');
+// Buttons + Event Listeners
 
-customButton.addEventListener("click", customGrid);
-
-let aquaButton = document.getElementById('aquabutton');
-let orangeButton = document.getElementById('orangebutton');
-let greenButton = document.getElementById('greenbutton');
-let greyButton = document.getElementById('greybutton');
-let rainbowButton = document.getElementById('rainbowbutton');
-let eraserButton = document.getElementById('eraserbutton');
+const aquaButton = document.getElementById('aquabutton');
+const orangeButton = document.getElementById('orangebutton');
+const greenButton = document.getElementById('greenbutton');
+const greyButton = document.getElementById('greybutton');
+const rainbowButton = document.getElementById('rainbowbutton');
+const eraserButton = document.getElementById('eraserbutton');
 
 aquaButton.addEventListener("click", aquaColour);
 orangeButton.addEventListener("click", orangeColour);
@@ -55,7 +54,8 @@ greyButton.addEventListener("click", greyColour);
 rainbowButton.addEventListener("click", rainbowColour);
 eraserButton.addEventListener("click", eraser);
 
-// functions for event listeners 
+
+// Functions for Event Listeners 
 
 function eraser () {
     container.addEventListener("mouseover", function(e) {
