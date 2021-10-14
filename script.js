@@ -97,7 +97,6 @@ function greyColour () {
     });
 }
 
-
 function rainbowColour () {
     container.addEventListener("mouseover", function (e) {
     if (e.target.classList == "divcols")  {
@@ -107,6 +106,3 @@ function rainbowColour () {
     }
 });
 }
-
-
-
