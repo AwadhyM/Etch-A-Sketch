@@ -41,7 +41,7 @@ body {
 
 #container{
     display: flex;
-    border: solid 2px black;
+    border: solid 1px black;
     flex-wrap: wrap; 
     flex-direction: column;
     justify-content: flex-start;
