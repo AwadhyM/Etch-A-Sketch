@@ -1,17 +1,14 @@
 const container = document.getElementById('container');
-let rows = document.getElementsByClassName("divrows");
-let cols = document.getElementsByClassName("divcols");
+const rows = document.getElementsByClassName("divrows");
+const cols = document.getElementsByClassName("divcols");
 
 function createGrid (rows) {
     for (i = 1; i <= rows; i++) {
         const gridrows = document.createElement('div');
-        gridrows.classList.add("divrows");
-        container.appendChild(gridrows);
+        container.appendChild(gridrows).className = "divrows";
         for (j = 1; j <= rows; j++) {
         const cols = document.createElement('div');
-        cols.classList.add("divcols");
-        cols.setAttribute("ID", `${i} x ${j}`);
-        gridrows.appendChild(cols);
+        gridrows.appendChild(cols).className = "divcols";
     }
     }
 }
@@ -35,6 +32,8 @@ function customGrid () {
     if (userChoice > 0 && userChoice <=100) {
         removeExistingGrid();
         createGrid(userChoice);
+    } else {
+        alert("Invalid value entered. Please try again");
     }
 }
 
